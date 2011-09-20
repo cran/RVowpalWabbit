@@ -1,0 +1,64 @@
+2011-09-20  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION: Set Version: to 0.0.3
+
+	* src/*: Updated to current version of vowpal's git repo which
+	compiles cleanly under -pedantic too (with thanks to John et al)
+
+	* configure.in: Better gcc version test to decide when to use
+	-march=native (on 4.3 or later) borrowing line from John 
+
+
+2011-09-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/R_vw.cpp: Wrap a try/catch block around main function
+
+	* man/vw.Rd: Added a \note{} about the need to setwd() accordingly if
+	relative paths are used
+
+2011-09-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/*: Updated to current version of vowpal's git repo which no
+	longer requires -std=c++0x (via uint64_t instead of u. long long)
+
+	* configure.in: Updated to no longer add -std=c++0x
+
+2011-09-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/Makevars.in: Also set -lz -lpthread in PKG_LIBS
+
+	* cleanup: Remove src/Makevars too
+
+2011-09-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/*: Updated to current version of vowpal's git repo which now
+	compiles cleanly using -std=c++0x
+
+	* configure.in: Added more stringent test for Boost Program_Options
+	library re-using two macros by Thomas Porschberg from the autoconf
+	archive.
+
+2011-08-31  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION: Set Version: to 0.0.2
+
+	* DESCRIPTION: Set SVN $Date$ property
+
+	* src/*: Updated to current version of vowpal's git repo
+
+2011-08-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* man/vw.Rd: Added minimal manual page for vw() function
+
+	* inst/test/: Copied upstream regression test input data, models and
+	reference output here
+
+	* demo/vw.R: Collected upstream tests in a demo file vw.R
+
+	* src/accumulate.{cc,h},src/lda_core.cc: Applied dos2unix
+
+2011-08-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* Initial test package version 0.0.1 replicating the results of the
+	upstream RunTests script using the the upstream vw binary
+
