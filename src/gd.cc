@@ -44,7 +44,6 @@ void* gd_thread(void *in)
     {//this is a poor man's select operation.
       if ((ec = get_delay_example(thread_num)) != NULL)//nonblocking
 	{
-
 	  if (ec->pass != current_pass)
 	    {
 	      global.eta *= global.eta_decay_rate;
@@ -60,7 +59,6 @@ void* gd_thread(void *in)
       else if ((ec = get_example(thread_num)) != NULL)//semiblocking operation.
 	{
 	  assert(ec->in_use);
-
 	  if (ec->pass != current_pass && global.span_server != "")
 	    {
 	      if(global.span_server != "") {
@@ -130,8 +128,11 @@ bool command_example(example* ec, gd_thread_params* params) {
 
 float finalize_prediction(float ret) 
 {
-  if ( (::isnan)(ret))
-    return 0.5;
+  if ( isnan(ret))
+    {
+      cout << "you have a NAN!!!!!" << endl;
+      return 0.;
+    }
   if ( ret > global.max_label )
     return global.max_label;
   if (ret < global.min_label)
@@ -145,7 +146,6 @@ void finish_example(example* ec)
   if (-- ec->threads_to_finish == 0)
     {
       pthread_mutex_unlock(&ec->lock);
-
       output_and_account_example(ec);
       free_example(ec);
     }
@@ -199,21 +199,13 @@ void output_and_account_example(example* ec)
   
   for (size_t i = 0; i<global.final_prediction_sink.index(); i++)
     {
-      int f = global.final_prediction_sink[i].fd;
+      int f = global.final_prediction_sink[i];
       if(global.active)
 	global.print(f, ec->final_prediction, ai, ec->tag);
       else if (global.lda > 0)
 	print_lda_result(f,ec->topic_predictions.begin,0.,ec->tag);
       else
-	{
-	  float w;
-	  if (global.reg->weight_vectors != NULL) {
-	    w = global.reg->weight_vectors[0][global.final_prediction_sink[i].id];
-	  } else {
-	    w = 0.;
-	  }
-	  global.print(f, ec->final_prediction, w*ec->global_weight, ec->tag);
-	}
+	global.print(f, ec->final_prediction, 0, ec->tag);
     }
 
   pthread_mutex_lock(&output_lock);
@@ -669,6 +661,8 @@ float query_decision(example* ec, float k)
 void local_predict(example* ec, gd_vars& vars, regressor& reg, size_t thread_num)
 {
   label_data* ld = (label_data*)ec->ld;
+
+  set_minmax(ld->label);
 
   ec->final_prediction = 
     finalize_prediction(ec->partial_prediction);
