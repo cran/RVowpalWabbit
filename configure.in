@@ -5,13 +5,13 @@
 # Borrowing code from the configure.in script in RQuantLib
 # Also borrowing two Boost macros from the Autoconf archive
 #
-# $Id: configure.in 19 2011-09-22 15:00:23Z edd $
+# $Id: configure.in 31 2012-05-20 19:01:22Z edd $
 
 # require at least autoconf 2.50
 AC_PREREQ(2.50)
 
 # Process this file with autoconf to produce a configure script.
-AC_INIT(RVowpalWabbit, 0.0.3)
+AC_INIT(RVowpalWabbit, 0.0.4)
 
 # We are using C++ (commented out now as also done below by Boost tests)
 AC_LANG(C++)
@@ -87,9 +87,7 @@ fi
 
 AC_DEFUN([AX_BOOST_BASE], [AC_ARG_WITH([boost], [
 	AS_HELP_STRING([--with-boost@<:@=ARG@:>@],
-    	[use Boost library from a standard location (ARG=yes),
-     	 from the specified location (ARG=<path>),
-     	 or disable it (ARG=no) @<:@ARG=yes@:>@ ])], 
+    	[use Boost library from a standard location (ARG=yes), from the specified location (ARG=<path>), or disable it (ARG=no) @<:@ARG=yes@:>@ ])], 
     [
     	if test "$withval" = "no"; then
         	want_boost="no"
@@ -106,9 +104,7 @@ AC_DEFUN([AX_BOOST_BASE], [AC_ARG_WITH([boost], [
 
     AC_ARG_WITH([boost-libdir],
         AS_HELP_STRING([--with-boost-libdir=LIB_DIR],
-        	[Force given directory for boost libraries. Note that this will override 
-	        library path detection, so use this parameter only if default library 
-            detection fails and you know exactly where your boost libraries are located.]),
+        	[Force given directory for boost libraries. Note that this will override library path detection, so use this parameter only if default library detection fails and you know exactly where your boost libraries are located.]),
             [
                 if test -d "$withval"; then
                    ac_boost_lib_path="$withval"
@@ -279,13 +275,7 @@ AC_DEFUN([AX_BOOST_BASE], [AC_ARG_WITH([boost], [
 	
 	    if test "$succeeded" != "yes" ; then
 	        if test "$_version" = "0" ; then
-	            AC_MSG_NOTICE([[We could not detect the boost libraries (version 
-	                            $boost_lib_version_req_shorten or higher). If you have a 
-	                            staged boost library (still not installed) please specify
-	                            \$BOOST_ROOT in your environment and do not give a PATH 
-	                            to --with-boost option.  If you are sure you have boost installed, 
-	                            then check your version number looking in <boost/version.hpp>. 
-	                            See http://randspringer.de/boost for more documentation.]])
+	            AC_MSG_NOTICE([[We could not detect the boost libraries (version $boost_lib_version_req_shorten or higher). If you have a staged boost library (still not installed) please specify \$BOOST_ROOT in your environment and do not give a PATH to --with-boost option.  If you are sure you have boost installed, then check your version number looking in <boost/version.hpp>.]])
 	        else
 	            AC_MSG_NOTICE([Your boost libraries seems to old (version $_version).])
 	        fi
@@ -340,8 +330,7 @@ AC_DEFUN([AX_BOOST_BASE], [AC_ARG_WITH([boost], [
 AC_DEFUN([AX_BOOST_PROGRAM_OPTIONS], [
 	AC_ARG_WITH([boost-program-options],
 		AS_HELP_STRING([--with-boost-program-options@<:@=special-lib@:>@],
-                       [use the program options library from boost - it is possible to specify a certain library for the linker
-                        e.g. --with-boost-program-options=boost_program_options-gcc-mt-1_33_1 ]),
+                       [use the program options library from boost - it is possible to specify a certain library for the linker e.g. --with-boost-program-options=boost_program_options-gcc-mt-1_33_1 ]),
         [
         if test "$withval" = "no"; then
 			want_boost="no"
@@ -437,23 +426,30 @@ fi
 ## if it is g++, do some putzing with args
 AC_PROG_CXX
 if test "${GXX}" = yes; then
+    ## determine g++ versions
     gxx_version=`${CXX} -v 2>&1 | tail -1 | cut -d ' ' -f 3 | cut -d '.' -f 1,2`
+
+    ## now test
     case ${gxx_version} in
         1.*|2.*|3.*|4.0|4.1)
 	     AC_MSG_WARN([Only g++ version 4.2 or greater can be used with Rcpp / RVowpalWabbit.])
 	     AC_MSG_ERROR([Please use a different compiler.])   
         ;;
-	4.2)
-             ## gcc/g++-4.2 cannot do -march=native
-             MARCH_FLAG="-march=nocona"
-        ;;
+    #   4.2)
+    #         ## gcc/g++-4.2 cannot do -march=native, and can't do -march=nocona on PPC. Arrggh.
+    #         MARCH_FLAG="-march=nocona"
+    #    ;;
 	4.3|4.4|4.5|4.6|4.7|4.8|4.9|5.*)
-             ## use -march=native where we can
-             MARCH_FLAG="-march=native"
+              ## use -march=native where we can
+    	      #  MARCH_FLAG="-march=native"
+	      ## set a least-common denominator (and BDR does not like -march=native as there
+	      ## can be LAN-wide installations over different architectures
+	      MARCH_FLAG="-mtune=core2"
         ;;
 	esac
     ## these flags are used upstream by Vowpal Wabbit; CRAN does not want them unconditionally in src/Makevars
-    AC_SUBST([CXXFLAGS],["${CXXFLAGS} -g0 ${MARCH_FLAG} -Wall -O3 -fomit-frame-pointer -ffast-math -fno-strict-aliasing"])
+    ## Fedora 16 cannot cope with -ffast-math in C++ code it seems, removing -ffast-math    
+    AC_SUBST([CXXFLAGS],["${CXXFLAGS} -g0 ${MARCH_FLAG} -Wall -O3 -fomit-frame-pointer -fno-strict-aliasing"])
 fi
 
 AC_SUBST([CXXFLAGS],["${BOOST_CPPFLAGS} ${CXXFLAGS}"])
