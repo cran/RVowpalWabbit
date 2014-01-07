@@ -1,3 +1,20 @@
+2014-01-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Version 0.0.6
+
+	* configure.in: Update autoconf macros ax_boost_base and
+	ax_boost_program_options to current versions in order to also find
+	Boost libraries in /usr/lib/${ARCH}/ under current Debian / Ubuntu
+
+	* config.guess: Added to keep configure happy
+	* config.sub: Idem
+	* install-sh: Idem
+
+	* src/bfgs.cc: Switch from isnan() to ISNAN() (defined by R) to
+	permit compilation under `-std=c++11` where isnan() is also defined.
+	* src/gd.cc: Idem
+	* src/parse_example.cc: Idem
+
 2012-05-20  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION: Version 0.0.5
