@@ -1,3 +1,30 @@
+2016-07-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Version 0.0.7
+
+	* src/allreduce.cc (all_reduce_init): Use ::bind()
+	* src/parse_regressor.cc (save_predictor): Use delete[] with new[]
+
+2015-10-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/R_vw.cpp: Comment-out gd.h header which is not needed
+
+2015-10-11  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .travis.yml: Updated to use sudo, and install Rcpp via apt
+
+2015-10-10  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/lda_core.cc: Do not use #warning as it is gcc specific
+
+	* src/parser.cc: Replace rand() with drand48() [properly scaled]
+	* src/parse_regressor.cc: Ditto
+
+2015-10-09  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Updates to DESCRIPTION (per R CMD check)
+	* NAMESPACE: Ditto
+
 2014-01-07  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION: Version 0.0.6
