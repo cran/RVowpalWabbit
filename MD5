@@ -1,8 +1,8 @@
-27a3181559869d480e02daa9705ee686 *ChangeLog
-0b220f7f5af907797bf02fe23590bc58 *DESCRIPTION
+b6fb72764ef1d0dcf5fb85ebba33b24d *ChangeLog
+d97ad06657941f084830ab47a63f5492 *DESCRIPTION
 7adf80fe4e52bfd72e5b83e28dccddc6 *NAMESPACE
 2c39199ef77f33464e4ce03ac46aacca *R/vw.R
-6369ba2a79b42f46a8938045ffcc067b *README.md
+096ac9469b365221bbd7280a92f7cde9 *README.md
 c0f96740d2d8a01e1fa01a8d1833201c *cleanup
 3e399452a2aee0617bf15634ed8034ed *configure
 a77baf8fde615bf315344b849d79f736 *configure.in
@@ -102,8 +102,8 @@ da41040a125d1a89d095627ad8e2c411 *src/unused/main.cc
 126866619f4f6074dfe2dfd47bfe7e2e *src/vw.cc
 ec13190ebfc91f92be54b01fb717c6ca *src/vw.h
 03bd6aafdf6181bf3c72afe4d52dda31 *tests/test1.r
-78d7a3da64d141379d513e7ff5bd3ab1 *tests/test2.r
+dceb189c0c60861fc51e2d8902c63f3f *tests/test2.r
 67a9e3d9e719768da06033a58c544ac3 *tests/test5.r
-b0a38a4fddf0a527051fd96ac6a343ed *tests/test6.r
+412c02d7a993b7242e1a78d7fdc9c782 *tests/test6.r
 7a0fff2b0ec65d58d2a7d6e5ff206adc *tests/test7.r
-b8a31d2eb6e15be1d98e751da0bcc18d *tests/test8.r
+d7d8ab43922be76699c5e6c6788451fa *tests/test8.r

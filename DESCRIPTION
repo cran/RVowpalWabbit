@@ -1,7 +1,7 @@
 Package: RVowpalWabbit
 Title: R Interface to the Vowpal Wabbit
-Version: 0.0.7
-Date: 2016-07-17
+Version: 0.0.8
+Date: 2016-10-16
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Author: Dirk Eddelbuettel <edd@debian.org>
 Description: The 'Vowpal Wabbit' project is a fast out-of-core learning
@@ -20,7 +20,8 @@ OS_type: unix
 License: GPL (>= 2)
 URL: https://github.com/JohnLangford/vowpal_wabbit/
         http://dirk.eddelbuettel.com/code/rcpp.html
+BugReports: https://github.com/eddelbuettel/rvowpalwabbit/issues
 NeedsCompilation: yes
-Packaged: 2016-07-17 12:26:43.957006 UTC; edd
+Packaged: 2016-10-16 22:54:41.676036 UTC; edd
 Repository: CRAN
-Date/Publication: 2016-07-17 16:09:26
+Date/Publication: 2016-10-17 11:09:23
