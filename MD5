@@ -1,5 +1,5 @@
-3f61678fc2f912ac18b84e067cabe8be *ChangeLog
-24c10accaa938530d4aa89ce4b9b8e0c *DESCRIPTION
+eefe498213e9be93359c54ace17b1ef6 *ChangeLog
+e006eaf42ab396898e69b283e696fe23 *DESCRIPTION
 2f8c46019b96dc47094c134b5a8e9ca0 *NAMESPACE
 cfa98365bbf88cdb0e494f1fa530d716 *R/RcppExports.R
 db3e451abfac6c318c07afbf4037e699 *R/vw.R
@@ -8,7 +8,7 @@ c0f96740d2d8a01e1fa01a8d1833201c *cleanup
 3e399452a2aee0617bf15634ed8034ed *configure
 a77baf8fde615bf315344b849d79f736 *configure.in
 349e341c35f1e8a86dcdcdc8d97485dd *demo/00Index
-3b994bb26fc3d3babca9177ba45c1735 *demo/vw.R
+2d81d029a04652ceee28435150e813d1 *demo/vw.R
 3b5aff7fc4519b74b4813e4d5cc2fc1e *inst/test/README
 6665e2dde8571e1970cecc0b7271c351 *inst/test/README.R-package
 cc2099ad00933fcdf799581f8451e676 *inst/test/RunTests
@@ -40,7 +40,7 @@ d41d8cd98f00b204e9800998ecf8427e *inst/test/train-sets/ref/0002c.stdout
 1aab9d16a22ddd18623bd860ed488fb2 *inst/test/train-sets/ref/wiki1K.stderr
 d41d8cd98f00b204e9800998ecf8427e *inst/test/train-sets/ref/wiki1K.stdout
 596bb6a1ee893b74a6dfc61c834d598d *inst/test/train-sets/wiki1K.dat
-0975c3fe2875be8fdcd35484f30af4c2 *man/vw.Rd
+0c16122d4c94e5e1fc4ec667c521341f *man/vw.Rd
 47c5711c15d1ff34ace7bad2354de568 *src/Makevars.in
 204603773b32479e76532efc7eb01681 *src/R_vw.cpp
 ad93bf2f755dd68acfb0ab10ce56efd4 *src/RcppExports.cpp
@@ -104,9 +104,9 @@ da41040a125d1a89d095627ad8e2c411 *src/unused/main.cc
 988b0180e1cb709b7ec85ea62689d37f *src/v_array.h
 126866619f4f6074dfe2dfd47bfe7e2e *src/vw.cc
 ec13190ebfc91f92be54b01fb717c6ca *src/vw.h
-e98a28b41b6eff163126025e57c457e6 *tests/test1.r
-f289835517a48016733bf554f1f79c58 *tests/test2.r
-1bc8e492db23bc9e04e009db729b25ef *tests/test5.r
-54988a45f7e37cd4e7125676552812ad *tests/test6.r
-8c9969a166f7ec4ce577f24dde4e9ce9 *tests/test7.r
-b22c47e82808c72ee6b27ab0d4c9238d *tests/test8.r
+3e56334680186aecd802cff7f0e6446f *tests/test1.r
+fa87d08d57e713be11ea45cf85641ca5 *tests/test2.r
+f485a5c8aeae66ea58f3ac1774ea33d1 *tests/test5.r
+3653911311fed1e5231e5bfe65e017dc *tests/test6.r
+6f9cce0a4feac3a0505b2ecb7df7ce19 *tests/test7.r
+1f7e281cd66bf53a7e76dc855aeda751 *tests/test8.r
