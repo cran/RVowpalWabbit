@@ -1,9 +1,9 @@
 Package: RVowpalWabbit
 Title: R Interface to the Vowpal Wabbit
-Version: 0.0.13
-Date: 2019-02-21
+Version: 0.0.14
+Date: 2020-06-13
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
-Author: Dirk Eddelbuettel <edd@debian.org>
+Author: Dirk Eddelbuettel
 Description: The 'Vowpal Wabbit' project is a fast out-of-core learning
  system sponsored by Microsoft Research (having started at Yahoo! Research)
  and written by John Langford along with a number of contributors. This R
@@ -22,10 +22,9 @@ SystemRequirements: The Boost 'program_options' library
 OS_type: unix
 StagedInstall: no
 License: GPL (>= 2)
-URL: https://github.com/JohnLangford/vowpal_wabbit/
-        http://dirk.eddelbuettel.com/code/rcpp.html
+URL: https://vowpalwabbit.org/
 BugReports: https://github.com/eddelbuettel/rvowpalwabbit/issues
 NeedsCompilation: yes
-Packaged: 2019-02-22 03:53:04.138256 UTC; edd
+Packaged: 2020-06-13 21:42:50.741973 UTC; edd
 Repository: CRAN
-Date/Publication: 2019-02-22 09:00:03 UTC
+Date/Publication: 2020-06-14 14:40:21 UTC

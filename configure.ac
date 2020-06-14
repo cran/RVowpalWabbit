@@ -4,14 +4,12 @@
 #
 # Borrowing code from the configure.in script in RQuantLib
 # Also borrowing two Boost macros from the Autoconf archive
-#
-# $Id$
 
 # require at least autoconf 2.50
 AC_PREREQ(2.50)
 
 # Process this file with autoconf to produce a configure script.
-AC_INIT(RVowpalWabbit, 0.0.6)
+AC_INIT([RVowpalWabbit], [0.0.14])
 
 # We are using C++ (commented out now as also done below by Boost tests)
 # edd 06 Jan 2014: turned off as it gets confusedby the borked clang under Ubuntu
@@ -19,7 +17,7 @@ AC_INIT(RVowpalWabbit, 0.0.6)
 AC_REQUIRE_CPP
 
 # Check of R
-AC_DEFUN(AC_PROG_R, [AC_CHECK_PROG(R,R,yes)])
+AC_DEFUN([AC_PROG_R], [AC_CHECK_PROG(R,R,yes)])
 AC_PROG_R
 
 # Next segment by Kurt, and once contributed to RQuantLib
@@ -31,21 +29,21 @@ CXX=`${R_HOME}/bin/R CMD config CXX`
 CXXFLAGS=`"${R_HOME}/bin/R" CMD config CXXFLAGS`
 
 ## look for Rscript, but use the one found via R_HOME to allow for multiple installations
-AC_DEFUN(AC_PROG_RSCRIPT, [AC_CHECK_PROG(RSCRIPT,Rscript,yes)])
-AC_PROG_RSCRIPT
-if test x"${RSCRIPT}" == x"yes" ; then
-    ## AC_MSG_RESULT([yes])    
-    ## link flag providing libary as well as path to library, and optionally rpath
-    RCPP_LDFLAGS=`${R_HOME}/bin/Rscript -e 'Rcpp:::LdFlags()'`
-else
-    #AC_MSG_RESULT([no])    
-    echo "
-  Your installation does not appear to have Rscript installed.
-
-  Please make sure that you have a working and complete R installation.
-"
-    exit 1
-fi
+#  AC_DEFUN(AC_PROG_RSCRIPT, [AC_CHECK_PROG(RSCRIPT,Rscript,yes)])
+#  AC_PROG_RSCRIPT
+#  if test x"${RSCRIPT}" == x"yes" ; then
+#      ## AC_MSG_RESULT([yes])
+#      ## link flag providing libary as well as path to library, and optionally rpath
+#      RCPP_LDFLAGS=`${R_HOME}/bin/Rscript -e 'Rcpp:::LdFlags()'`
+#  else
+#      #AC_MSG_RESULT([no])
+#      echo "
+#    Your installation does not appear to have Rscript installed.
+#
+#    Please make sure that you have a working and complete R installation.
+#  "
+#      exit 1
+#  fi
 
 
 # ===========================================================================
@@ -83,7 +81,7 @@ fi
 #   and this notice are preserved. This file is offered as-is, without any
 #   warranty.
 
-#serial 22
+dnl #serial 22
 
 AC_DEFUN([AX_BOOST_BASE],
 [
@@ -359,7 +357,7 @@ fi
 #   and this notice are preserved. This file is offered as-is, without any
 #   warranty.
 
-#serial 22
+dnl #serial 22
 
 AC_DEFUN([AX_BOOST_PROGRAM_OPTIONS],
 [
@@ -477,11 +475,11 @@ if test "${GXX}" = yes; then
 fi
 
 AC_SUBST([CXXFLAGS],["${BOOST_CPPFLAGS} ${CXXFLAGS}"])
-AC_SUBST([LDFLAGS],["${BOOST_LDFLAGS} ${BOOST_PROGRAM_OPTIONS_LIB} ${RCPP_LDFLAGS} ${LDFLAGS}"])
+AC_SUBST([LDFLAGS],["${BOOST_LDFLAGS} ${BOOST_PROGRAM_OPTIONS_LIB} ${LDFLAGS}"])
 
 AC_SUBST(CXXFLAGS)
 AC_SUBST(LDFLAGS)
-AC_OUTPUT(src/Makevars)
+AC_OUTPUT([src/Makevars])
 echo "Completed configuration and ready to build."
 
 
