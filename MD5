@@ -1,12 +1,12 @@
-864d0bd7d45ab2e5b72e749eeccd8d45 *ChangeLog
-c5e169e8215423d7574e4552d347d80f *DESCRIPTION
+8147cb67744fb724f85d3092ba41dc0a *ChangeLog
+f5e0e7c517598f24be1dbce75a8171ad *DESCRIPTION
 2f8c46019b96dc47094c134b5a8e9ca0 *NAMESPACE
 cfa98365bbf88cdb0e494f1fa530d716 *R/RcppExports.R
 db3e451abfac6c318c07afbf4037e699 *R/vw.R
-5df6f0bce3c8baee4a606a4111b536b4 *README.md
+ed85d59a9c3862ffeaad7022bdbdf279 *README.md
 c0f96740d2d8a01e1fa01a8d1833201c *cleanup
-779bfb72d87c3d637ffc1f1f0118ee94 *configure
-38e19dcb6d25fb5f994d0f8414477178 *configure.ac
+85a6f521d5334fe2524571e81bb71759 *configure
+bc6255e6d371f52ef9cb65929ba11514 *configure.ac
 349e341c35f1e8a86dcdcdc8d97485dd *demo/00Index
 9b054a8482a8c727d0e4d0cdb31f7a41 *demo/vw.R
 3b5aff7fc4519b74b4813e4d5cc2fc1e *inst/test/README
@@ -28,7 +28,6 @@ d41d8cd98f00b204e9800998ecf8427e *inst/test/test-sets/ref/0002b.stdout
 d41d8cd98f00b204e9800998ecf8427e *inst/test/test-sets/ref/0002c.stdout
 a7762f1f004718a8bb3173291fe158ac *inst/test/train-sets/0001.dat
 f598d0e73a709ff24985dd78e4341222 *inst/test/train-sets/0001.dat.cache
-914160b7cef1b6a8d92d2a9948835533 *inst/test/train-sets/0002.dat
 d6318f5b011188dc0587487f88be32c7 *inst/test/train-sets/ref/0001.stderr
 d41d8cd98f00b204e9800998ecf8427e *inst/test/train-sets/ref/0001.stdout
 b8bfae075653514f562aab4a2b9aeb71 *inst/test/train-sets/ref/0002.stderr
@@ -51,7 +50,7 @@ c3a5d133182025a22fc7f316d42cfabb *src/accumulate.h
 350dd52e5455799297f70a022244eef5 *src/allreduce.h
 1664fd29627531a1b713c7a00893f84f *src/bfgs.cc
 df8a2c93ae28eed7411701f0e40938be *src/bfgs.h
-36db7a1f254d2395c38a7592bf13ca51 *src/cache.cc
+0729c1915d52b0f97926607926ea66e8 *src/cache.cc
 f4a4f5c7cdcba1d56118a880fefc3c42 *src/cache.h
 829a5aebf636376073d33f1a46308abf *src/comp_io.h
 4e0d50f029b97ab0be6594b696b4c76f *src/constant.h
@@ -64,7 +63,7 @@ b643b0f1c6b5a0cdc6fc53d96b75e5df *src/delay_ring.h
 878a90e535213911b4080d5d89957a50 *src/gd_mf.h
 5eb1968e3c52d9e1feba4315e3f5b52c *src/global_data.cc
 a67cf8705f7d9953560d75dc2e82f75a *src/global_data.h
-b587548b4ccddbda5f4356743270ebad *src/hash.cc
+d6c0161ba92cd4a86c7b699c878d2388 *src/hash.cc
 9a56299f81505320d3f17b00851a29c5 *src/hash.h
 7812e368e25b19e0f75daf4742da7900 *src/init.c
 4119e31bc6528acd57120151c1982309 *src/io.cc
@@ -91,9 +90,9 @@ b58b8ffed02da1fdbe5cc3ee43970957 *src/parse_primitives.h
 7aa810c0aa63d4c623099d0772716b57 *src/parse_regressor.h
 319a0c06fcb353cea8cf20951ff41514 *src/parser.cc
 758217b5123a5c3ca97eaef72e4e73c3 *src/parser.h
-1bf616039e47f3afb34a0b9fc4398c3b *src/sender.cc
+78d1655e522e202bd67b78d9c3afeab4 *src/sender.cc
 f84a672330df72e1164e90d30b98272d *src/sender.h
-1b2bf999e4c0ce2cbfebaea5ba402f57 *src/simple_label.cc
+68c8048938748653e0329aa6345c00e7 *src/simple_label.cc
 d40e7d1ddfc60593c860cdafb08cd75b *src/simple_label.h
 c12e5eaf1b552199a1162dfa29a5c80a *src/sparse_dense.cc
 bc629594373dcd9285a24b3c8372090a *src/sparse_dense.h
@@ -106,7 +105,3 @@ df781878647c29a553862867ceef7061 *src/vw.cc
 ec13190ebfc91f92be54b01fb717c6ca *src/vw.h
 60db0fc4f6289f8d79b824e7caac4107 *tests/test1.r
 fa87d08d57e713be11ea45cf85641ca5 *tests/test2.r
-b7068072633740ddeaa5d778e531ac11 *tests/test5.r
-3653911311fed1e5231e5bfe65e017dc *tests/test6.r
-9f845b257db1b3febb80cdae40bd5d70 *tests/test7.r
-1f7e281cd66bf53a7e76dc855aeda751 *tests/test8.r
