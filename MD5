@@ -1,12 +1,12 @@
-8147cb67744fb724f85d3092ba41dc0a *ChangeLog
-f5e0e7c517598f24be1dbce75a8171ad *DESCRIPTION
+6fb120669861cb67d255869374d480ad *ChangeLog
+5057fdb8935379419950f5f66aa7fb20 *DESCRIPTION
 2f8c46019b96dc47094c134b5a8e9ca0 *NAMESPACE
 cfa98365bbf88cdb0e494f1fa530d716 *R/RcppExports.R
 db3e451abfac6c318c07afbf4037e699 *R/vw.R
-ed85d59a9c3862ffeaad7022bdbdf279 *README.md
+7dcb1dc9f4064f3e659022836774a84d *README.md
 c0f96740d2d8a01e1fa01a8d1833201c *cleanup
-85a6f521d5334fe2524571e81bb71759 *configure
-bc6255e6d371f52ef9cb65929ba11514 *configure.ac
+e6d0f2c91e937365b809e28ea06cc015 *configure
+67935dc10b8037ef1484cef988b6b2f2 *configure.ac
 349e341c35f1e8a86dcdcdc8d97485dd *demo/00Index
 9b054a8482a8c727d0e4d0cdb31f7a41 *demo/vw.R
 3b5aff7fc4519b74b4813e4d5cc2fc1e *inst/test/README
@@ -39,7 +39,7 @@ d41d8cd98f00b204e9800998ecf8427e *inst/test/train-sets/ref/0002c.stdout
 1aab9d16a22ddd18623bd860ed488fb2 *inst/test/train-sets/ref/wiki1K.stderr
 d41d8cd98f00b204e9800998ecf8427e *inst/test/train-sets/ref/wiki1K.stdout
 596bb6a1ee893b74a6dfc61c834d598d *inst/test/train-sets/wiki1K.dat
-18869f2a4175f639524f4f7de1a26abe *man/vw.Rd
+82a2cd288428131629b109d3680dcef1 *man/vw.Rd
 60b47966ab878cc29d53ab496ff7bf2e *src/Makevars.in
 204603773b32479e76532efc7eb01681 *src/R_vw.cpp
 ad93bf2f755dd68acfb0ab10ce56efd4 *src/RcppExports.cpp
@@ -100,7 +100,7 @@ a827f7d787a85dd456993e361c921dcc *src/unique_sort.cc
 7afa68039d48fe0a5d0acea3e1baa8af *src/unique_sort.h
 da41040a125d1a89d095627ad8e2c411 *src/unused/main.cc
 7d21c799eae5f2c2186ddf6f1962df71 *src/unused/offset_tree.cc
-988b0180e1cb709b7ec85ea62689d37f *src/v_array.h
+1b86323cff4189d1e6f1113524f09d6d *src/v_array.h
 df781878647c29a553862867ceef7061 *src/vw.cc
 ec13190ebfc91f92be54b01fb717c6ca *src/vw.h
 60db0fc4f6289f8d79b824e7caac4107 *tests/test1.r

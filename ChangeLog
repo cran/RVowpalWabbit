@@ -1,3 +1,28 @@
+2021-10-11  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.0.16
+	* configure.ac: Idem
+
+	* src/v_array.h (push_many): Protect one null pointer operation
+
+2021-10-09  Dirk Eddelbuettel  <edd@debian.org>
+
+	* configure.ac: Updated via 'autoupdate' and 'autoreconf
+	--warnings=obsolete' to bring to autoconf 2.69 standards
+	* configure: Idem
+
+	* man/vw.Rd: Updated one URL to https
+	* DESCRIPTION: Idem
+
+2021-06-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (URL): Add repo to URL field
+
+2021-01-18  Dirk Eddelbuettel  <edd@debian.org>
+
+        * .github/workflows/ci.yaml: Add CI runner using r-ci
+	* README.md: Add new badge
+
 2020-08-03  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.15
